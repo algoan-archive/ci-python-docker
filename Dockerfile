@@ -1,7 +1,7 @@
-FROM python:3.6.3
+FROM python:3.7.2
 MAINTAINER Yelloan "devteam@yelloan.com"
 
-ENV CLOUD_SDK_VERSION 183.0.0
+ENV CLOUD_SDK_VERSION 232.0.0
 
 ARG INSTALL_COMPONENTS
 RUN apt-get update -qqy && apt-get install -qqy \
