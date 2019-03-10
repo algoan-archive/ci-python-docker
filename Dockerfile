@@ -14,6 +14,7 @@ RUN apt-get update -qqy && apt-get install -qqy \
         openssh-client \
         git \
         zip \
+        gettext \
     && easy_install -U pip && \
     pip install -U crcmod && \
     export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
