@@ -1,7 +1,7 @@
 FROM python:3.7.2
 MAINTAINER Yelloan "devteam@yelloan.com"
 
-ENV CLOUD_SDK_VERSION 232.0.0
+ENV CLOUD_SDK_VERSION 257.0.0
 
 ARG INSTALL_COMPONENTS
 RUN apt-get update -qqy && apt-get install -qqy \
@@ -15,6 +15,8 @@ RUN apt-get update -qqy && apt-get install -qqy \
         git \
         zip \
         gettext \
+        default-jre \
+        gettext-base \
     && easy_install -U pip && \
     pip install -U crcmod && \
     export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
@@ -40,5 +42,9 @@ RUN set -ex \
 
 RUN apt-get install kubectl
 RUN pip install nose
+
+RUN wget https://storage.googleapis.com/kubernetes-helm/helm-v2.10.0-linux-amd64.tar.gz
+RUN tar zxfv helm-v2.10.0-linux-amd64.tar.gz
+RUN cp linux-amd64/helm /usr/local/bin/helm
 
 VOLUME ["/root/.config"]
