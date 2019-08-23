@@ -17,6 +17,7 @@ RUN apt-get update -qqy && apt-get install -qqy \
         gettext \
         default-jre \
         gettext-base \
+        jq \
     && easy_install -U pip && \
     pip install -U crcmod && \
     export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
