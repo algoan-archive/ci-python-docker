@@ -1,4 +1,4 @@
-FROM python:3.7.2
+FROM python:3.8.2
 MAINTAINER Yelloan "devteam@yelloan.com"
 
 ENV CLOUD_SDK_VERSION 257.0.0
